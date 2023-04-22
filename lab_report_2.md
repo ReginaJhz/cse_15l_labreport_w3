@@ -64,3 +64,88 @@ For the second method called, the main method and the handleRequest in the Handl
 Love UCSD CSE and Chemistry (with a \n)
 San (with a \n)
 ```
+
+## Part 2 Bug
+
+The bug in the method reversed
+```
+// Returns a *new* array with all the elements of the input array in reversed
+  // order
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+
+We can test the operation with the following Junit
+
+```
+@Test
+  public void testReversed() {
+    int[] input1 = { };
+    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+
+    int[] input2 = {2,1};
+    assertArrayEquals(new int[]{1,2}, ArrayExamples.reversed(input2));
+
+    int[] input3 = {1,2,3};
+    assertArrayEquals(new int[]{3,2,1}, ArrayExamples.reversed(input3));
+
+    int[] input4 = {1,2,3,4,5,6,7,8};
+    assertArrayEquals(new int[]{8,7,6,5,4,3,2,1}, ArrayExamples.reversed(input4));
+  }
+  ```
+  
+  After running the test, we can find our reverse method failed the test.
+  
+  ![Image](test.png)
+  
+  The expected value and the actual returned values are different. This might be cuased by a runtime error. 
+  
+  The current method is implemented as below:
+
+```
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+
+The problem of the loop is that, we are attempting to returns a *new* array with all the elements of the input array in reversed order, but inside the loop, the value of arr[i] is being assigned to newArray[arr.length - i - 1]. It should be the other way around.  
+
+We can solve this bug by simply reversing the two arrays and return the new Array.
+
+The coorect version of the reverse method is below:
+
+```
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length]; 
+    for(int i = 0; i < arr.length;i++) {
+      newArray[i] = arr[arr.length - i - 1];
+    }
+    return newArray;
+  }
+```
+
+Then, test the code with the same Junit Test above, now we pass the test.
+
+
+  
+  
+
+
+
+
+Provide:
+
+A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
+An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
+The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)
+The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
+Briefly describe why the fix addresses the issue.

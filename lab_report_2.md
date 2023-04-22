@@ -135,17 +135,8 @@ The coorect version of the reverse method is below:
 
 Then, test the code with the same Junit Test above, now we pass the test.
 
+![Image](test1.png)
 
-  
-  
+# Part3 Reflection
 
-
-
-
-Provide:
-
-A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
-An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
-The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)
-The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
-Briefly describe why the fix addresses the issue.
+In Week 2's lab, I learned the basics of web servers, and the basics of url and its manipulation. Before lab and lectures of 2, I never used java to start a basic webserver. 

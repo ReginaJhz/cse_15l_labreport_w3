@@ -40,3 +40,11 @@ import java.net.URI;
     }
 }
 ```
+
+In the compiler, we starts the WebServer by using the following code:
+```
+javac StringServer.java
+java StringServer <Port Number>
+```
+then we could access the web server at the link:
+`http://localhost:<Port Number>`

@@ -139,4 +139,4 @@ Then, test the code with the same Junit Test above, now we pass the test.
 
 # Part3 Reflection
 
-In Week 2's lab, I learned the basics of web servers, and the basics of url and its manipulation. Before lab and lectures of 2, I never used java to start a basic webserver. 
+During the second week's lab session, I gained fundamental knowledge on web servers and the fundamental concepts of URL and how to manipulate it. Prior to attending the lectures and lab sessions, I did not have any experience with starting a basic web server using Java programming language.
